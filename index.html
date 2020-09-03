@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>ChloePlz</title>
+	<link rel="icon" type="image/png" sizes="16x16" href="cplz16.png">
+	<link rel="icon" type="image/png" sizes="48x48" href="cplz48.png">
+	<link rel="icon" type="image/png" sizes="256x256" href="cplz256.png">
+	<style>
+		* {
+			font-family: sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		html {
+			overflow: hidden;
+			scroll-behavior: smooth;
+		}
+		section::-webkit-scrollbar {
+			background: rgba(0,0,0,0.3);
+			max-width: 1vw;
+		}
+		section::-webkit-scrollbar-thumb {
+			background: rgba(255, 255, 255, 0.2);
+			border-radius: 1px;
+		}
+		body {
+			width: 100vw;
+			height: 100vh;
+			background: radial-gradient(circle, #444 20%, #000 120%) fixed;
+			color: #ccc;
+			animation: Fade_In 1s ease-in;
+		}
+		body:after {
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background: radial-gradient(circle, #444 20%, #000 120%) fixed;
+			z-index: -2;
+		}
+		@keyframes Fade_In {
+			0% {opacity: 0;}
+			100% {opacity: 1;}
+		}
+		@keyframes BG_Pulse {
+			0% {transform: scale(1);}
+			50% {transform: scale(0.9);}
+			100% {transform: scale(1);}
+		}
+		::selection {
+			background: rgba(255,255,255,0.2);
+		}
+		abbr {
+			cursor: help;
+			text-decoration: none;
+			border-bottom: 1px dotted rgba(255,255,255,0.5);
+		}
+		code {
+			font-family: monospace;
+			font-size: 1.2em;
+			vertical-align: 1px;
+			padding: 0px 2px 1px;
+			background: rgba(90,90,90,0.4);
+			border-radius: 2px;
+		}
+		a {
+			color: #fff;
+			text-decoration: inherit;
+			text-shadow: 0 0 2px #000;
+			transition: all 0.2s ease;
+		}
+		a:hover,
+		a:focus {
+			background: rgba(0,0,0,0.2);
+			box-shadow: 0 0 0 4px rgba(0,0,0,0.2);
+			filter: drop-shadow(0 0 4px #000);
+			text-shadow: 0 0 1px #fff;
+			border-radius: 1px;
+		}
+		h1 a:hover,
+		h1 a:focus,
+		h2 a:hover,
+		h2 a:focus {
+			background: inherit;
+			box-shadow: inherit;
+		}
+		a[href="#am2r"] {
+			background: rgba(0,255,0,0.1);
+		}
+		a[href*="discord.io"]:before,
+		a[href*="discord.me"]:before,
+		a[href*="discord.gg"]:before {
+			content: "";
+			padding-right: 22px;
+			background: url("https://www.google.com/s2/favicons?domain=discordapp.com") left center no-repeat;
+			filter: drop-shadow(0 0 1px #000);
+		}
+		a.gdrive:before,
+		a[href*="drive.google.com"]:before {
+			content: "";
+			padding-right: 22px;
+			background: url("https://ssl.gstatic.com/docs/doclist/images/infinite_arrow_favicon_5.ico") left center/16px no-repeat;
+			filter: drop-shadow(0 0 1px #000);
+		}
+		a[href*="github.com"]:before {
+			content: "";
+			padding-right: 22px;
+			background: url("https://github.com/favicon.ico") left center/16px no-repeat;
+			filter: brightness(0) invert(1) drop-shadow(0 0 1px #000);
+		}
+		a[href*="imgur.com"]:before {
+			content: "";
+			padding-right: 22px;
+			background: url("https://www.google.com/s2/favicons?domain=imgur.com") left center no-repeat;
+			filter: drop-shadow(0 0 1px #000);
+		}
+		a[href*="multimc.org"]:before {
+			content: "";
+			padding-right: 22px;
+			background: url("https://www.google.com/s2/favicons?domain=multimc.org") left center no-repeat;
+			filter: contrast(1.2) brightness(1.2) drop-shadow(0 0 1px #000)
+		}
+		a[href*="redd.it"]:before,
+		a[href*="reddit.com"]:before {
+			content: "";
+			padding-right: 22px;
+			background: url("https://www.google.com/s2/favicons?domain=reddit.com") left center no-repeat;
+			filter: contrast(1.1) saturate(0.7) brightness(1.1) drop-shadow(0 0 1px #000);
+		}
+		a[href*="twitch.tv"]:before {
+			content: "";
+			padding-right: 22px;
+			background: url("https://www.google.com/s2/favicons?domain=twitch.tv") left center no-repeat;
+			filter: brightness(1.1) drop-shadow(0 0 1px #000);
+		}
+		a[href*="twitter.com"]:before {
+			content: "";
+			padding-right: 22px;
+			background: url("https://www.google.com/s2/favicons?domain=twitter.com") left center no-repeat;
+			filter: brightness(1.5) drop-shadow(0 0 1px #000);
+		}
+		a[href*="warframe.fandom.com"]:before {
+			content: "";
+			padding-right: 22px;
+			background: url("https://www.google.com/s2/favicons?domain=https://warframe.fandom.com/wiki/") left center no-repeat;
+			filter: drop-shadow(0 0 1px #000);
+		}
+		a[href*="warframe.market"]:before {
+			content: "";
+			padding-right: 25px;
+			background: url("https://warframe.market/favicon.ico") left center/23px no-repeat;
+			filter: brightness(1.8) drop-shadow(0 0 1px #000) drop-shadow(0 0 1px #000);
+		}
+		a[href*="youtu.be"]:before,
+		a[href*="youtube.com"]:before {
+			content: "";
+			padding-right: 23px;
+			background: url("https://s.ytimg.com/yts/img/favicon_32-vflOogEID.png") left center/19px no-repeat;
+			filter: saturate(0.8) drop-shadow(0 0 1px #000);
+		}
+		section {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 0;
+		}
+		section, :target ~ #home {
+			display: none;
+		}
+		section:target, #home {
+			display: flex;
+			animation: Fade_In 0.4s ease-in;
+		}
+		#home {
+			text-align: center;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			overflow-x: hidden;
+		}
+		/* smoother but worse performance *
+		@media only screen and (min-width: 1200px) {
+			section, :target ~ #home {
+				display: flex;
+				height: 0;
+				opacity: 0;
+				transition: opacity 0.6s ease, height 0s linear 0.6s;
+			}
+			section:target, #home {
+				height: 100%;
+				opacity: 1;
+				transition: opacity 0.6s ease;
+				animation: none;
+			}
+		}
+		/**/
+		#home:before {
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background: url("cplz48.png") center/100vmin no-repeat ;
+			filter: brightness(0) blur(10px) opacity(0.1);
+			animation: Fade_In 5s ease-in-out 0.2s backwards, BG_Pulse 10s ease-in-out infinite;
+			z-index: -1;
+		}
+		#home h1 {
+			font-size: calc(5vmin + 20px);
+		}
+		#home div {
+			padding: 10px;
+		}
+		#home div a {
+			padding: 8px;
+			background: rgba(0,0,0,0.2);
+			border-radius: 2px;
+		}
+		nav {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 80px;
+			padding-bottom: 8px;
+			display: flex;
+			text-align: center;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			overflow: hidden;
+			background: rgba(0,0,0,0.1);
+			color: #fff;
+			animation: Fade_In 1s ease 1s backwards;
+			z-index: -3;
+		}
+		:target:not(#ignis) ~ nav {
+			z-index: 2;
+		}
+		#am2r {
+			text-align: center;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			overflow-x: hidden;
+			background: rgba(0,255,0,0.1);
+		}
+		#am2r:before {
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background: url("https://imgur.com/aLNP68g.gif") center bottom/100vmax no-repeat ;
+			filter: blur(8px) opacity(0.2);
+			z-index: -1;
+		}
+		.am2r_animation {
+			position: relative;
+			width: calc(320px * 2);
+			height: calc(240px * 2);
+			overflow: hidden;
+		}
+		.am2r_stars {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: calc(320px * 2);
+			height: calc(640px * 2);
+			transition: all 1s ease;
+			animation: AM2R_Title_Scroll 30s ease-out infinite backwards;
+		}
+		.am2r_text {
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: calc(320px * 2);
+			height: calc(240px * 2);
+			transition: all 1s ease;
+			animation: AM2R_Title_Fade 30s ease-out infinite backwards;
+		}
+		.am2r_animation:hover .am2r_stars {
+			width: calc(320px * 1);
+			height: calc(640px * 1);
+			margin-top: 400px;
+		}
+		.am2r_animation:hover .am2r_text {
+			width: calc(320px * 1);
+			height: calc(240px * 1);
+		}
+		#am2r img {
+			image-rendering: pixelated;
+		}
+		@keyframes AM2R_Title_Scroll {
+			0% {top: 0; filter: brightness(0);}
+			10% {filter: brightness(1);}
+			60% {top: calc(-400px * 2);}
+			95% {filter: brightness(1);}
+			100% {top: calc(-400px * 2); filter: brightness(0);}
+		}
+		@keyframes AM2R_Title_Fade {
+			0% {opacity: 0;}
+			50% {opacity: 0;}
+			60% {opacity: 1;}
+			95%  {opacity: 1;}
+			100% {opacity: 0;}
+		}
+		#discord {
+			text-align: center;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			overflow-x: hidden;
+			background: rgba(0,0,255,0.1);
+		}
+		#ignis {
+			text-align: center;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			overflow-x: hidden;
+			background: rgba(50,0,0,0.6);
+		}
+		#ignis:before {
+			content: "";
+			position: absolute;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background:
+				/* reverse parallax */
+				url("ignis-fractal.png") center/calc(650vmax - 2000px) no-repeat,
+				url("ignis-fractal.png") center/calc(300vmax - 400px) no-repeat,
+				/* parallax tunnel */
+				url("ignis-fractal.png") center/calc(250vmin + 400px) no-repeat,
+				url("ignis-fractal.png") center/calc(100vmin + 400px) no-repeat,
+				url("ignis-fractal.png") center/calc(30vmin + 400px) no-repeat,
+				url("ignis-fractal.png") center/calc(2vmin + 200px) no-repeat,
+				/**/
+				0;
+			filter: blur(5px) opacity(0.5);
+			z-index: -1;
+		}
+		#ignis:after {
+			content: "";
+			position: absolute;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background:
+				/* corners */
+				url("ignis-fractal.png") calc(-92vmin - 300px) calc(-90vmin - 300px)/calc(150vmin + 200px) no-repeat,
+				url("ignis-fractal.png") calc(-92vmin - 300px) calc(100vh - 60vmin + 100px)/calc(150vmin + 200px) no-repeat,
+				url("ignis-fractal.png") calc(100vw - 58vmin + 100px) calc(-90vmin - 300px)/calc(150vmin + 200px) no-repeat,
+				url("ignis-fractal.png") calc(100vw - 58vmin + 100px) calc(100vh - 60vmin + 100px)/calc(150vmin + 200px) no-repeat,
+				/* sides */
+				url("ignis-fractal.png") calc(-50vmin - 2000px) center/calc(150vmin + 800px) no-repeat,
+				url("ignis-fractal.png") calc(100vw - 100vmin + 1200px) center/calc(150vmin + 800px) no-repeat,
+				/**/
+				0;
+			filter: blur(1px) opacity(0.9);
+			z-index: -1;
+		}
+		#ignis a {
+			text-shadow:
+				0 1px 1px #888,
+				0 1px 2px #000,
+				0 0 4px #000,
+				0 0 4px #000;
+		}
+		#minecraft {
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			overflow-x: hidden;
+			background: rgba(0,255,0,0.1);
+		}
+		#shortlinks {
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			overflow-x: hidden;
+		}
+		#sleep {
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			overflow-x: hidden;
+		}
+		#sleep:before {
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background: url("https://i.imgur.com/qJIc1J7.png") center/cover no-repeat ;
+			filter: blur(20px) opacity(0.2);
+			z-index: -1;
+		}
+		#livestream .twitch, #livestream .youtube {
+			display: flex;
+			text-align: center;
+			align-items: center;
+			justify-content: center;
+			width: 50%;
+			height: 100%;
+			overflow-x: hidden;
+		}
+		#livestream .twitch {
+			background: rgba(128,0,255,0.1);
+		}
+		#livestream .youtube {
+			background: rgba(255,0,0,0.1);
+		}
+	</style>
+</head>
+<body>
+	<section id="am2r">
+		<h2><abbr title="Another Metroid 2 Remake">AM2R</abbr> Title Background Preview</h2>
+		<div>
+			<!-- <img src="https://i.imgur.com/aLNP68g.gif" alt="AM2R animated title background" /> -->
+			<div class="am2r_animation">
+				<img class="am2r_stars" src="https://i.imgur.com/aLNP68g.gif" alt="AM2R animated title background" />
+				<img class="am2r_text" src="https://i.imgur.com/cYSpZw2.jpg" alt="AM2R title text overlay" />
+			</div>
+			<!-- <img class="" style="" src="https://i.imgur.com/cYSpZw2.jpg" alt="AM2R title text overlay" /> -->
+			<a href="https://imgur.com/a/jgCIuWZ">AM2R title previews</a>
+		</div>
+		<a class="gdrive" href="https://bit.ly/am2r-gdrive">AM2R title and other files</a>
+		<a href="https://reddit.com/r/AM2R/">AM2R reddit</a>
+		<a href="https://reddit.com/r/AM2R/wiki/index">AM2R reddit wiki</a>
+	</section>
+	<!-- <section id="discord">
+		
+	</section> -->
+	<section id="ignis">
+		<h2>Ignis Wraith</h2>
+		<div style="margin-top: 0.5em; padding: 0.5em; background: rgba(0,0,0,0.3);">
+			If you play <a href="https://warframe.com/signup?referrerId=56f6efb63ade7f0d1dca125a">Warframe</a> on PC, don't spend platinum on <a href="https://warframe.fandom.com/wiki/Ignis_Wraith" title="Ignis Wraith on Warframe Wiki">Ignis Wraith</a><br />
+			Many folks give them for free ~ just ask around!<br />
+		</div>
+		<div style="font-size: 0.8em; padding: 0.5em;">
+			Ignis Wraith research is available to clans that completed <a href="https://warframe.fandom.com/wiki/Operation:_The_Pacifism_Defect" title="Operation: The Pacifism Defect on Warframe Wiki">The Pacifism Defect</a> event in the <a href="https://content.warframe.com/dynamic/pacifismDefect.php" title="Pacifism Defect Scores">top 10%</a><br />
+			The blueprint can be replicated from their Chem Lab for 15k credits<br />
+			Some players use this to take advantage of others for profit<br />
+		</div>
+		<p style="font-size: 2em; margin-top: -5px;">•</p>
+		<div>
+			I offer free Ignis Wraith on PC<br />
+			<p style="font-size:0.8em">(mastery rank 9+, one per person, not for resale)</p>
+			<p>Send an in-game <code>/whisper</code> to&ensp;<strong>ChloePlz</strong>&ensp;or&ensp;<strong>FreeIgnisWraith</strong></p>
+		</div>
+		<p style="font-size: 0.8em; margin: -1px 0 2px;">or</p>
+		<p><abbr title="clυ#0067">Free Ignis Wraith [PC]</abbr> on <a href="https://discord.gg/warframe" title="Warframe Community Discord">Warframe Discord</a> <span style="font-size:0.8em">(checked daily)</span></p>
+		<a href="https://twitter.com/FreeIgnisWraith">FreeIgnisWraith on Twitter</a>
+		<!--a href="https://twitch.tv/FreeIgnisWraith">FreeIgnisWraith on Twitch</a-->
+		<p><a href="https://warframe.market/profile/ChloePlz">ChloePlz on warframe.market</a> <span style="font-size:0.8em">(inactive)</span></p>
+		<a style="position: absolute; bottom: 5px; font-size: 0.8em; opacity: 0.3;" href="https://imgur.com/a/ovj9rUh"><abbr title="Public Service Announcement">PSA</abbr> responses</a>
+	</section>
+	<section id="minecraft">
+		<h2>Minecraft Server</h2>
+		<br />
+			<a href="https://mcsrvstat.us/server/chloeplz.duckdns.org"><img src="https://mcapi.us/server/image?ip=chloeplz.duckdns.org&theme=dark&title=Status:" alt="ChloePlz minecraft server status" /></a><br />
+			<p>requires 1.12.2 with <a href="https://github.com/MultiMC/MultiMC5/wiki/Instance-Version#install">Forge</a> and <a href="https://minecraft.curseforge.com/projects/crafttweaker">CraftTweaker</a></p><br />
+			<div style="font-size:0.8em;text-align:center;">
+				Survival <abbr title="Player vs Environment">PvE</abbr><br />
+				Random Spawn (<abbr title="9000 blocks">9k</abbr> radius)<br />
+				<a href="https://imgur.com/a/oQnb1" title="Example structures from Recurrent Complex by Ivorius">Extra World Gen</a><br />
+				<a href="https://minecraft.curseforge.com/projects/environmental-creepers" title="Environmental Creepers by masady">No Creeper Griefing</a><br />
+				<a href="https://imgur.com/a/UkjCCcr" title="CraftTweaker &quot;uncrafting&quot; examples">Uncrafting</a><br />
+				<a href="https://youtu.be/sUWRuO-o3Eo?t=63" title="Gravestones One Command Creation by hokage3211">Gravestones</a><br />
+				<a href="https://youtu.be/43fTD51pFkA?t=11" title="One Player Sleeping for Minecraft 1.12 | Command Block Module by mcpeachpies">One Player Sleep</a><br />
+				<a href="https://youtu.be/6QcnVfndyaw?t=171" title="Only One Command | Self-Planting saplings by mcpeachpies">Auto Sapling</a><br />
+				in progress: Extra chest loot<br />
+			</div>
+			<br />
+			<p><a href="https://multimc.org">MultiMC Launcher</a> is recommended</p>
+			<p>mini-map mods are encouraged</p>
+			<p style="transform: scale(0.2); opacity: 0.1">use this if you are completely lost: <a class="gdrive" href="https://drive.google.com/drive/folders/1FqX9dF9-A5fLo9Nvv2bmDuMqFUq4WFY8">minimal</a></p>
+	</section>
+	<section id="shortlinks">
+		<h2>Shortlinks</h2>
+		<div>
+			<a href="https://bit.ly/am2r-gdrive" title="https://drive.google.com/drive/folders/11SehSU4950Sr_ZqfGTScSF2yfhPa8HOT">bit.ly/am2r-gdrive</a><br />
+			<a href="https://bit.ly/chloeplz" title="http://tiny.cc/chloeplz">bit.ly/chloeplz</a><br />
+			<a href="https://bit.ly/ChloePlz" title="http://tiny.cc/chloeplz">bit.ly/ChloePlz</a> (may expire?)<br />
+			<a href="https://bit.ly/ChloePls" title="http://tiny.cc/ChloePlz">bit.ly/ChloePls</a><br />
+			<a href="https://tiny.cc/clu" title="https://chloeplz.github.io/">tiny.cc/clu</a><br />
+			<a href="https://tiny.cc/plz" title="https://chloeplz.github.io/">tiny.cc/plz</a><br />
+			<a href="https://tiny.cc/cplz" title="https://chloeplz.github.io/">tiny.cc/cplz</a><br />
+			<a href="https://tiny.cc/chloeplz" title="http://chloeplz.duckdns.org/">tiny.cc/chloeplz</a><br />
+			<a href="https://tiny.cc/ChloePlz" title="http://ChloePlz.DuckDNS.org/">tiny.cc/ChloePlz</a>
+		</div><br />
+		<h2>inline icon test</h2>
+		<div style="text-align: right;">
+			<a href="#discord.gg">test</a><br />
+			<a class="gdrive" href="">test</a><br />
+			<a href="#imgur.com">test</a><br />
+			<a href="#multimc.org">test</a><br />
+			<a href="#reddit.com">test</a><br />
+			<a href="#twitch.tv">test</a><br />
+			<a href="#twitter.com">test</a><br />
+			<a href="#warframe.fandom.com">test</a><br />
+			<a href="#warframe.market">test</a><br />
+			<a href="#youtube.com">test</a>
+		</div>
+	</section>
+	<section id="sleep">
+		<h2>🌿💤</h2>
+		<img style="border-radius: 8px;" src="https://i.imgur.com/qJIc1J7.png" alt="do not disturb - tiny grass is dreaming" title="do not disturb - tiny grass is dreaming" />
+	</section>
+	<section id="livestream">
+		<h2 class="twitch"><a href="https://twitch.tv/ChloePlz">Twitch</a></h2>
+		<h2 class="youtube"><a href="https://youtube.com/channel/UCrCmouIu6vdK5c6KHeab-Sw">YouTube</a></h2>
+	</section>
+	<section id="home">
+		<h1><a href="/">ChloePlz</a></h1>
+		<div>
+			<a href="#am2r">AM2R</a>
+			<a href="#ignis">Ignis Wraith</a>
+			<a href="#minecraft">Minecraft</a>
+			<!-- <a href="#discord">Discord</a> -->
+			<a href="#livestream">Live Stream</a>
+		</div>
+		<div>
+			<a href="/trials">Trials</a>
+		</div>
+		<div>
+			
+		</div>
+	</section>
+	<nav>
+		<div>
+			<h1><a href="#">ChloePlz</a></h1>
+			<a href="#am2r">AM2R</a>&emsp;
+			<!-- <a href="#discord">Discord</a>&emsp; -->
+			<a href="#ignis">Ignis Wraith</a>&emsp;
+			<a href="#minecraft">Minecraft</a>&emsp;
+			<!-- <a href="#shortlinks">Shortlinks</a>&emsp; -->
+			<!-- <a href="#sleep">Sleep</a>&emsp; -->
+			<a href="#livestream">Live Stream</a>
+		</div>
+	</nav>
+	<a style="position: absolute; bottom: 1vh; right: 0; padding: 0.4vh; font-size: 1vh; opacity: 0.1;" href="https://validator.w3.org/check?uri=referer">Satisfy</a>
+	<a style="position: absolute; bottom: 0; right: 0; padding: 0.4vh; font-size: 1vh; opacity: 0.1;" href="https://jigsaw.w3.org/css-validator/check?uri=referer">Satisfy</a>
+</body>
+</html>

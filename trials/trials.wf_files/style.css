@@ -1,0 +1,150 @@
+@keyframes flickerAnimation {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@-o-keyframes flickerAnimation {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@-moz-keyframes flickerAnimation {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@-webkit-keyframes flickerAnimation {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+.animate-flicker {
+  -webkit-animation: flickerAnimation 1s infinite;
+  -moz-animation: flickerAnimation 1s infinite;
+  -o-animation: flickerAnimation 1s infinite;
+  animation: flickerAnimation 1s infinite; }
+
+body {
+  background-color: #1A1A1A;
+  font-family: Verdana, Geneva, sans-serif;
+  color: white;
+  min-width: 1600px; }
+
+#searchText {
+  font-family: Verdana, Geneva, sans-serif;
+  width: 254px;
+  height: 27px;
+  border-radius: 2px; }
+
+#searchSubmit {
+  width: 64px;
+  height: 32px;
+  font-family: Verdana, Geneva, sans-serif;
+  border-radius: 2px; }
+
+#searchForm {
+  top: 40px;
+  right: 25px;
+  position: absolute; }
+
+#summary {
+  width: 512px;
+  padding-bottom: 0.5em; }
+
+a {
+  color: inherit; }
+
+a:link {
+  text-decoration: none; }
+
+a:hover {
+  text-decoration: underline; }
+
+table {
+  border-collapse: collapse;
+  width: 100%; }
+
+th,
+td {
+  text-align: left;
+  padding: 8px; }
+
+tr {
+  background-color: #1C1C1F; }
+
+tr:nth-child(even) {
+  background-color: #121314; }
+
+th {
+  background-color: #a12626;
+  color: white; }
+
+.slowrun {
+  color: #d14242; }
+
+.speedrun {
+  /* #color: #E4C054; */
+  color: #E5C154; }
+
+.fastrun {
+  color: #46c7d2; }
+
+.run {
+  color: #a8a8a8; }
+
+.failed {
+  color: #FF0000; }
+
+.tooltip {
+  position: relative;
+  display: inline-block; }
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  top: 100%;
+  left: 50%;
+  margin-left: -60px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1; }
+
+.tooltip:hover .tooltiptext {
+  visibility: visible; }
+
+/* https://www.w3schools.com/howto/howto_js_dropdown.asp */
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1; }
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block; }
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #f1f1f1; }
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+  display: block; }
