@@ -88,12 +88,24 @@
 		a[href="#am2r"] {
 			background: rgba(0,255,0,0.1);
 		}
+		a[href*="altervista.org"]:before {
+			content: "";
+			padding-right: 22px;
+			background: url("https://www.google.com/s2/favicons?domain=altervista.org&sz=32") left center/16px no-repeat;
+			filter: drop-shadow(0 0 1px #000);
+		}
+		a[href*="archive.org/"]:before {
+			content: "";
+			padding-right: 22px;
+			background: url("https://www.google.com/s2/favicons?domain=archive.org&sz=32") left center/16px no-repeat;
+			filter: drop-shadow(0 0 1px #000);
+		}
 		a[href*="discord.io"]:before,
 		a[href*="discord.me"]:before,
 		a[href*="discord.gg"]:before {
 			content: "";
 			padding-right: 22px;
-			background: url("https://www.google.com/s2/favicons?domain=discordapp.com") left center no-repeat;
+			background: url("https://www.google.com/s2/favicons?domain=discordapp.com&sz=32") left center/16px no-repeat;
 			filter: drop-shadow(0 0 1px #000);
 		}
 		a.gdrive:before,
@@ -103,42 +115,84 @@
 			background: url("https://ssl.gstatic.com/docs/doclist/images/infinite_arrow_favicon_5.ico") left center/16px no-repeat;
 			filter: drop-shadow(0 0 1px #000);
 		}
+		a[href*="dropbox.com"]:before {
+			content: "";
+			padding-right: 22px;
+			background: url("https://www.google.com/s2/favicons?domain=dropbox.com&sz=32") left center/16px no-repeat;
+			filter: brightness(2) drop-shadow(0 0 1px #000);
+		}
 		a[href*="github.com"]:before {
 			content: "";
 			padding-right: 22px;
 			background: url("https://github.com/favicon.ico") left center/16px no-repeat;
 			filter: brightness(0) invert(1) drop-shadow(0 0 1px #000);
 		}
+		a[href*="gitlab.com"]:before {
+			content: "";
+			padding-right: 22px;
+			background: url("https://www.google.com/s2/favicons?domain=gitlab.com&sz=32") left center/16px no-repeat;
+			filter: drop-shadow(0 0 1px #000);
+		}
 		a[href*="imgur.com"]:before {
 			content: "";
 			padding-right: 22px;
-			background: url("https://www.google.com/s2/favicons?domain=imgur.com") left center no-repeat;
+			background: url("https://s.imgur.com/images/favicon-32x32.png") left center/16px no-repeat;
 			filter: drop-shadow(0 0 1px #000);
+		}
+		a[href*="mediafire.com"]:before {
+			content: "";
+			padding-right: 22px;
+			background: url("https://www.google.com/s2/favicons?domain=mediafire.com") left center no-repeat;
+			filter: brightness(1.1) drop-shadow(0 0 1px #000);
+		}
+		a[href*="mega.nz"]:before {
+			content: "";
+			padding-right: 22px;
+			background: url("https://www.google.com/s2/favicons?domain=mega.nz&sz=32") left center/16px no-repeat;
+			filter: saturate(0.6) contrast(2)  drop-shadow(0 0 1px #000);
 		}
 		a[href*="multimc.org"]:before {
 			content: "";
 			padding-right: 22px;
-			background: url("https://www.google.com/s2/favicons?domain=multimc.org") left center no-repeat;
+			background: url("https://multimc.org/favicon-32x32.png") left center/16px no-repeat;
 			filter: contrast(1.2) brightness(1.2) drop-shadow(0 0 1px #000)
+		}
+		a[href*="pastebin.com"]:before {
+			content: "";
+			padding-right: 22px;
+			background: url("https://www.google.com/s2/favicons?domain=pastebin.com") left center no-repeat;
+			filter: drop-shadow(0 0 1px #000);
 		}
 		a[href*="redd.it"]:before,
 		a[href*="reddit.com"]:before {
 			content: "";
 			padding-right: 22px;
-			background: url("https://www.google.com/s2/favicons?domain=reddit.com") left center no-repeat;
+			background: url("https://www.redditstatic.com/desktop2x/img/favicon/favicon-32x32.png") left center/16px no-repeat;
 			filter: contrast(1.1) saturate(0.7) brightness(1.1) drop-shadow(0 0 1px #000);
+		}
+		a[href*="tapatalk.com"]:before {
+			content: "";
+			padding-right: 22px;
+			background: url("https://www.google.com/s2/favicons?domain=tapatalk.com&sz=32") left center/16px no-repeat;
+			filter: drop-shadow(0 0 1px #000);
 		}
 		a[href*="twitch.tv"]:before {
 			content: "";
 			padding-right: 22px;
-			background: url("https://www.google.com/s2/favicons?domain=twitch.tv") left center no-repeat;
+			background: url("https://static.twitchcdn.net/assets/favicon-32-d6025c14e900565d6177.png") left center/16px no-repeat;
 			filter: brightness(1.1) drop-shadow(0 0 1px #000);
 		}
 		a[href*="twitter.com"]:before {
 			content: "";
 			padding-right: 22px;
-			background: url("https://www.google.com/s2/favicons?domain=twitter.com") left center no-repeat;
-			filter: brightness(1.5) drop-shadow(0 0 1px #000);
+			background: url("https://www.google.com/s2/favicons?domain=twitter.com&sz=32") left center/16px no-repeat;
+			filter: brightness(1.4) drop-shadow(0 0 1px #000);
+		}
+		a[href*="uptodown.com"]:before {
+			content: "";
+			padding-right: 22px;
+			background: url("https://www.google.com/s2/favicons?domain=uptodown.com&sz=32") left center/16px no-repeat;
+			filter: drop-shadow(0 0 1px #000);
 		}
 		a[href*="warframe.fandom.com"]:before {
 			content: "";
@@ -155,9 +209,15 @@
 		a[href*="youtu.be"]:before,
 		a[href*="youtube.com"]:before {
 			content: "";
-			padding-right: 23px;
-			background: url("https://s.ytimg.com/yts/img/favicon_32-vflOogEID.png") left center/19px no-repeat;
-			filter: saturate(0.8) drop-shadow(0 0 1px #000);
+			padding-right: 22px;
+			background: url("https://www.google.com/s2/favicons?domain=youtube.com&sz=32") left center/16px no-repeat;
+			filter: saturate(0.6) contrast(1.8) drop-shadow(0 0 1px #000);
+		}
+		a[href*="zippyshare.com"]:before {
+			content: "";
+			padding-right: 22px;
+			background: url("https://www.google.com/s2/favicons?domain=zippyshare.com") left center no-repeat;
+			filter: drop-shadow(0 0 1px #000);
 		}
 		section {
 			position: fixed;
@@ -493,16 +553,27 @@
 		</div><br />
 		<h2>inline icon test</h2>
 		<div style="text-align: right;">
+			<a href="#altervista.org">test</a><br />
+			<a href="#archive.org/">test</a><br />
 			<a href="#discord.gg">test</a><br />
 			<a class="gdrive" href="">test</a><br />
+			<a href="#dropbox.com">test</a><br />
+			<a href="#github.com">test</a><br />
+			<a href="#gitlab.com">test</a><br />
 			<a href="#imgur.com">test</a><br />
+			<a href="#mediafire.com">test</a><br />
+			<a href="#mega.nz">test</a><br />
 			<a href="#multimc.org">test</a><br />
+			<a href="#pastebin.com">test</a><br />
 			<a href="#reddit.com">test</a><br />
+			<a href="#tapatalk.com">test</a><br />
 			<a href="#twitch.tv">test</a><br />
 			<a href="#twitter.com">test</a><br />
+			<a href="#uptodown.com">test</a><br />
 			<a href="#warframe.fandom.com">test</a><br />
 			<a href="#warframe.market">test</a><br />
-			<a href="#youtube.com">test</a>
+			<a href="#youtube.com">test</a><br />
+			<a href="#zippyshare.com">test</a><br />
 		</div>
 	</section>
 	<section id="sleep">
